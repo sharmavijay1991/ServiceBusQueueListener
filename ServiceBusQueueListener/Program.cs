@@ -82,19 +82,7 @@ namespace ServiceBusQueueListener
             //EH
             producerClient = new EventHubProducerClient(connectionStringEH, eventHubNameEH);
 
-            /* Vijay: to use different sent logic.
-            // Create a batch of events 
-            using EventDataBatch eventBatch = await producerClient.CreateBatchAsync();
 
-            for (int i = 1; i <= numOfEventsEH; i++)
-            {
-                if (!eventBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes($"Event {i}"))))
-                {
-                    // if it is too large for the batch
-                    throw new Exception($"Event {i} is too large for the batch and cannot be sent.");
-                }
-            }
-            */
 
             try
             {
@@ -167,7 +155,7 @@ namespace ServiceBusQueueListener
                     }
                 }
             }
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
 
             // complete the message. message is deleted from the queue. 
             await args.CompleteMessageAsync(args.Message);
