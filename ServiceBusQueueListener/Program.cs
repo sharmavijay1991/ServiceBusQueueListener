@@ -54,16 +54,16 @@ namespace ServiceBusQueueListener
     class Program
     {
         // connection string to your Service Bus namespace
-        static string connectionString = "Endpoint=sb://vijaysharma-namespace-test.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=V9kFJKis5RwDKaJESTuy/y45muotm+FxyHfT+PQzRlw=";
-        static string queueName = "vijaysharma-sample-queue";
+        static string connectionString = "<ServiceBusConnectionString>";
+        static string queueName = "<QueueName>";
         static ServiceBusClient client;
         // the processor that reads and processes messages from the queue
         static ServiceBusProcessor processor;
 
 
         //Event-Hub Settings
-        private const string connectionStringEH = "Endpoint=sb://vijaysharma-demo-eventhub.servicebus.windows.net/;SharedAccessKeyName=EventHubRoot;SharedAccessKey=/rxF8nLAbzgADOAg1ZlJTaGzXwmw1pytfairwmshm5g=;EntityPath=vijaysharma-demo-eventhubentity";
-        private const string eventHubNameEH = "vijaysharma-demo-eventhubentity";
+        private const string connectionStringEH = "<Event Hub Connection String>";
+        private const string eventHubNameEH = "<Event Hub Idnetity>";
         private const int numOfEventsEH = 3;
         static EventHubProducerClient producerClient;
 
